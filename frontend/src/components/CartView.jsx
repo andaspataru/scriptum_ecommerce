@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useStore } from '../store';
 import { api } from '../api';
 
-/* ───────── Modal de checkout ───────── */
 
 function CheckoutModal({ open = false, onClose, cartTotal = 0, onOrderPlaced }) {
   const { user, cart } = useStore();
@@ -201,7 +200,6 @@ function CheckoutModal({ open = false, onClose, cartTotal = 0, onOrderPlaced }) 
           }),
         });
       } catch (_) {
-        /* ignore */
       }
 
       setOk('Comanda a fost plasată cu succes!');
@@ -234,7 +232,7 @@ function CheckoutModal({ open = false, onClose, cartTotal = 0, onOrderPlaced }) 
         </div>
 
         <div className="modal-body checkout-body">
-          {/* Date personale */}
+          {}
           <section className="checkout-section">
             <header className="checkout-section-head">
               <h4>Date personale</h4>
@@ -276,7 +274,7 @@ function CheckoutModal({ open = false, onClose, cartTotal = 0, onOrderPlaced }) 
             </div>
           </section>
 
-          {/* Adresă */}
+          {}
           <section className="checkout-section">
             <header className="checkout-section-head">
               <h4>Adresă de livrare</h4>
@@ -354,7 +352,7 @@ function CheckoutModal({ open = false, onClose, cartTotal = 0, onOrderPlaced }) 
             </div>
           </section>
 
-          {/* Plată */}
+          {}
           <section className="checkout-section">
             <header className="checkout-section-head">
               <h4>Plată</h4>
@@ -417,7 +415,7 @@ function CheckoutModal({ open = false, onClose, cartTotal = 0, onOrderPlaced }) 
             )}
           </section>
 
-          {/* Footer */}
+          {}
           <div className="checkout-footer">
             <div className="checkout-total">
               <span>Total</span>
@@ -456,7 +454,6 @@ function CheckoutModal({ open = false, onClose, cartTotal = 0, onOrderPlaced }) 
   );
 }
 
-/* ───────── Pagina de coș ───────── */
 
 export default function CartView() {
   const { cart, loadCart, setQuantity, removeItem, rates, loadRates, user } =

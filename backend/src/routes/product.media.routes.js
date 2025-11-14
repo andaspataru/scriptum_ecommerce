@@ -30,7 +30,7 @@ const upload = multer({
 });
 
 function toPublicRel(fullPath) {
-  const relFromPublic = path.relative(PUBLIC_DIR, fullPath).replaceAll(path.sep, '/'); // ex: "images/1762.png"
+  const relFromPublic = path.relative(PUBLIC_DIR, fullPath).replaceAll(path.sep, '/'); 
   const cleaned = relFromPublic.replace(/^public\//i, '');
   const ensured = cleaned.startsWith('images/') ? cleaned : `images/${cleaned.replace(/^\/+/, '')}`;
   return `/${ensured}`;

@@ -184,7 +184,7 @@ export default function AddProduct({ setPage }) {
 
       <form className="admin-form" onSubmit={onSubmit}>
         <div className="admin-grid">
-          {/* Coloana principală: detalii text */}
+          {}
           <section className="admin-column main">
             <div className="admin-field">
               <label className="admin-label">
@@ -262,7 +262,7 @@ export default function AddProduct({ setPage }) {
               />
             </div>
           </section>
-                  {/* Coloana laterală: imagini (o singură “carte” cu două secțiuni) */}
+                  {}
           <section className="admin-column side">
             <div className="admin-card">
               <h2 className="admin-card-title">Imagini</h2>
@@ -270,7 +270,7 @@ export default function AddProduct({ setPage }) {
                 Gestionează coperta principală și galeria de imagini pentru acest titlu.
               </p>
 
-              {/* bloc: copertă principală */}
+              {}
               <div className="admin-block">
                 <h3 className="admin-block-title">Copertă principală *</h3>
                 <p className="admin-block-text">
@@ -300,7 +300,7 @@ export default function AddProduct({ setPage }) {
                 </div>
               </div>
 
-              {/* bloc: galerie imagini */}
+              {}
               <div className="admin-block">
                 <h3 className="admin-block-title">Galerie imagini *</h3>
                 <p className="admin-block-text">

@@ -3,7 +3,7 @@ import { api, setToken, clearToken } from './api';
 
 export const useStore = create((set, get) => ({
   user: null,
-  authReady: false, // 👈
+  authReady: false, 
 
   products: [],
   cart: null,

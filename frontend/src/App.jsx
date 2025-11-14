@@ -14,20 +14,16 @@ import './styles/theme.css';
 export default function App() {
   const [page, setPageState] = useState(() => localStorage.getItem('page') || 'home');
 
-  // luăm tot store-ul ca să avem acces la orice structură de coș ai acolo
   const store = useStore((s) => s);
   const { user, logout, fetchMe, authReady } = store;
 
-  // ───────── calcul robust al numărului de articole din coș
   let cartCount = 0;
 
   if (typeof store.cartCount === 'number') {
-    // dacă ai deja un cartCount în store, îl folosim direct
     cartCount = store.cartCount;
   } else {
     let cartArray = null;
 
-    // încercăm câteva variante uzuale
     if (Array.isArray(store.cart)) cartArray = store.cart;
     if (!cartArray && Array.isArray(store.cartItems)) cartArray = store.cartItems;
     if (!cartArray && store.cart && Array.isArray(store.cart.items)) cartArray = store.cart.items;

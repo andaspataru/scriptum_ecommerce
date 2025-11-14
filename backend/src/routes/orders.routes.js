@@ -3,9 +3,7 @@ import { AppDataSource } from '../config/data-source.js';
 
 const router = Router();
 
-/**
- * Creează o comandă nouă
- */
+
 router.post('/', async (req, res) => {
   const b = req.body;
   console.log('[order] received', b);
@@ -67,14 +65,11 @@ router.post('/', async (req, res) => {
   }
 });
 
-/**
- * Listează toate comenzile (pentru admin)
- */
+
 router.get('/', async (req, res) => {
   try {
     const orderRepo = AppDataSource.getRepository('Order');
 
-    // luăm comenzile + liniile lor; numele relației probabil e "items"
     const orders = await orderRepo
       .createQueryBuilder('o')
       .leftJoinAndSelect('o.items', 'items')
